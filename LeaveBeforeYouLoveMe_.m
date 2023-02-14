@@ -1,17 +1,8 @@
-%Lazaro, Alliah I. BSECE3E
-% 102 lines of code which embodies the intro  with bass, verse 1 with bass, chorus. verse 2, chorus 2 and bridge of the song. 
-%Progress percentage: 80%
-%The only remaining syntax needed are the bass of chorus, verse 2, and bridge.
+% Lazaro, Alliah I. BSECE3E
+% LEAVE BEFORE YOU LOVE ME - MARSHMELLO X JONAS BROTHERS
 
 clear;
 clc
-function tone = note(key,dur)
-  fs = 11025;
-  t = 0:(1/fs):dur;
-  freq = 440*2^((key-49)/12);
-  env = (0.1*exp((-1)*t*5)+0.1*cos(1.25*t));
-  tone = sin(2*pi*freq*t).*env;
-end
 
 fs=11025;
 
@@ -20,14 +11,14 @@ t = [note(49,0.25),note(49,0.25),note(49,0.25),note(47,0.5),note(47,0.25),note(4
 note(47,0.25),note(47,0.5),note(51,0.25),note(51,0.25),note(51,0.25),note(49,0.5),note(49,0.25),note(49,0.25),...
 note(47,0.5),note(47,0.25),note(47,0.25),note(46,0.25)];
 
-%intro bass (NEWLY ADDED)
+%intro bass 
 b = [note(42,1),note(42,1),note(42,1),note(42,1),note(44,1),note(44,1),note(44,1) 0 0 0 0 0 0 0 0];
 bb = [note(39,1),note(39,1),note(39,1),note(39,1),note(40,1),note(40,1),note(40,1) 0 0 0 0 0 0 0 0];
 bbb = [note(35,1),note(0,3),note(35,1),note(0,2) 0 0 0 0 0 0 0 0 0 0 0];
 
 intro = t + b + bb + bbb;
 
-%verse one (UPDATED)
+%verse one 
 v = [note(54,0.25),note(54,0.25),note(51,0.25),note(56,0.5),note(51,1.5),note(0,0.75),note(51,0.25),note(59,0.25),note(59,0.25),note(58,0.25),...
       note(58,0.25),note(58,0.25),note(56,0.25),note(56,0.5),note(51,1),note(0,0.75),note(44,0.25),note(54,0.5),note(52,.13),note(51,0.13),...
       note(51,0.75),note(49,0.5),note(47,0.5),note(47,1),note(44,0.25),note(54,0.5),note(52,0.13),note(51,0.13),note(49,0.25),note(49,0.25),...
@@ -37,7 +28,7 @@ v = [note(54,0.25),note(54,0.25),note(51,0.25),note(56,0.5),note(51,1.5),note(0,
       note(47,0.13),note(49,0.25),note(47,0.13),note(49,0.25),note(51,1),note(49,0.25),note(47,0.13),note(49,0.25),note(47,0.13),note(49,0.25 ),...
       note(51,0.75),note(51,0.25),note(49,1.75),note(0,0.25)];
 
-%verse one bass (NEWLY ADDED)
+%verse one bass 
 bv = [note(42,1),note(42,.75),note(42,.75),note(42,.5),note(42,.75),note(42,.75),note(42,.5),note(39,.75),note(39,.75),note(39,.5),note(39,.75), ...
 note(39,.5),note(40,.75),note(40,.75),note(40,.75),note(40,.5),note(40,.5),note(40,.5),note(37,.75),note(37,.75),note(37,.5),note(37,.75),note(37,.75),...
 note(37,.5),note(42,.75),note(42,.75),note(42,.5),note(39,.75),note(39,.75),note(39,.5),note(39,.75),note(39,.5),note(40,.75),note(40,.75),note(40,.5),...
@@ -54,7 +45,7 @@ note(32,.75),note(0,1.25),note(32,.75),note(0,1.25),note(32,.75),note(35,1.25),n
 
 verse1 = v + bv + bvv + bvvv;
 
-%chorus (NEWLY ADDED)
+%chorus 
 ch = [note(49,0.5),note(49,0.25),note(49,0.25),note(47,0.25),note(47,0.5),note(47,0.25),note(47,0.25),note(46,0.25),note(46,0.25),note(46,0.25),...
 note(47,0.75),note(42,0.25),note(49,0.5),note(49,0.25),note(49,0.25),note(47,0.25),note(47,0.5),note(47,0.25),note(47,0.25),...
 note(46,0.25),note(46,0.25),note(46,0.25),note(47,0.5),note(42,0.25),note(42,0.25),note(51,0.5),note(52,0.25),note(51,0.25),note(49,0.25),note(49,0.35),...
@@ -76,7 +67,7 @@ note(18,0.25),note(25,0.25),note(34,0.25),note(25,0.25),note(34,0.5),note(25,0.5
 
 chorus1 = ch + bch;
 
-%verse 2 (NEWLY ADDED)
+%verse 2 
 vers2 = [note(51,0.25),note(44,0.25),note(41,0.25),note(56,0.5),note(51,0.75),note(49,0.65),note(0,0.65),note(51,0.25),note(59,0.25),note(59,0.25),...
 note(58,0.25),note(58,0.25),note(58,0.25),note(56,0.25),note(56,0.5),note(51,0.65),note(49,0.13),note(47,0.85),note(44,0.25),note(54,0.75),note(52,0.13),...
 note(51,0.13),note(51,0.75),note(44,0.5),note(47,0.5),note(47,0.5),note(44,0.75),note(54,0.75),note(51,0.25),note(49,0.25),note(51,0.25),note(52,1.25),...
@@ -97,7 +88,7 @@ note(18,0.5),note(37,0.25),note(18,0.25),note(18,0.25),note(18,0.25),];
 
 verse2 = vers2 + verb;
 
-%chorus 2 (NEWLY ADDED)
+%chorus 2 
 chh2 = [note(0,0.25),note(49,0.5),note(49,0.25),note(49,0.25),note(47,0.25),note(47,0.5),note(47,0.25),note(47,0.25),note(46,0.25),note(46,0.25),note(46,0.25),...
 note(47,0.75),note(42,0.25),note(49,0.5),note(49,0.25),note(49,0.25),note(47,0.25),note(47,0.5),note(47,0.25),note(47,0.25),...
 note(46,0.25),note(46,0.25),note(46,0.25),note(47,0.5),note(42,0.25),note(42,0.25),note(51,0.5),note(52,0.25),note(51,0.25),note(49,0.25),note(49,0.35),...
@@ -122,7 +113,7 @@ note(18,0.25),note(18,0.25),note(25,0.25),note(34,0.25),note(18,0.25),note(18,0.
 
 ch2 = chh2 + ch2b;
 
-%bridge and ending (NEWLY ADDED)
+%bridge 
 br = [note(54,0.25),note(54,0.25),note(56,0.25),note(51,0.25),note(51,0.5),note(49,0.5),note(58,0.25),note(58,0.25),note(58,0.25),note(59,0.5),...
 note(56,0.5),note(58,0.5),note(58,0.25),note(59,0.25),note(54,0.25),note(54,0.5),note(51,0.25),note(47,0.25),note(47,0.25),note(59,0.5),note(58,0.5),...
 note(56,0.25),note(58,0.25),note(56,0.13),note(54,0.35),note(59,0.5),note(58,0.35),note(56,0.13),note(54,1),note(54,0.25),note(59,0.25),note(59,0.25),...
@@ -141,7 +132,7 @@ note(18,0.25),note(18,0.25),note(25,0.25),note(34,0.25),note(18,0.25),note(18,0.
 bridge = br + vb;
 
 
-
+%outro
 out = [note(49,0.25),note(49,0.25),note(49,0.25),note(47,0.5),note(47,0.25),note(47,0.25),note(46,0.5),note(46,0.25),note(46,0.25),...
 note(47,0.5),note(47,0.25),note(47,0.5),note(51,0.25),note(51,0.25),note(51,0.25),note(49,0.5),note(49,0.25),note(49,0.25),note(47,0.5),note(47,0.25),...
 note(47,0.25),note(46,0.5),note(46,0.25),note(46,0.25),note(46,0.25),note(49,0.25),note(49,0.25),note(49,0.25),note(47,0.5),note(47,0.25),note(47,0.25),...
